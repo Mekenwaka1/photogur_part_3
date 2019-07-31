@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block content %}
+<!-- <html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body> -->
+    <!-- Initial code starts here: <h2>Welcome to the Pictures Page</h2>
+    {% for picture in pictures %}
+    <a href="{% url 'picture_details' id=picture.pk %}">
+        <li><img src="{{ picture.url}}" /></li>
+    </a>
+    {% endfor %} : Initial code ends here: -->
+
+    <h2>Welcome to the Pictures Page</h2>
+    <ul>
+    {% for picture in pictures %}
+    <article>
+        <a href="{% url 'picture_details' id=picture.pk %}">
+            <li><img src="{{ picture.url}}" /></li>
+        </a>
+        <h4>{{picture.title}} by {{picture.artist}}</h4>
+    </article>
+    <article>
+        <a href="{% url 'picture_details' id=picture.pk %}">
+            <li><img src="{{ picture.url}}" /></li>
+        </a>
+        <h4>{{picture.title}} by {{picture.artist}}</h4>
+    </article>
+    {% endfor %}
+    </ul>
+<!-- </body>
+</html> -->
+{% endblock %}
